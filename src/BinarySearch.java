@@ -2,12 +2,10 @@
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		
-		int arr[]={6,1,2,3,4,5,9};
+		int arr[]={6,1,2,3,4,5,9,10};
 		int low=0,high=arr.length;
 	    int	mid=(low+high)/2;
 		int key=2;
-		int index=arr.length;
 		while (low<=high) {
 			
 			if(arr[mid]<key) {
@@ -22,8 +20,5 @@ public class BinarySearch {
 		    if (low >= high) {
 			System.out.println("Element is not found.......");
 		}
-		
-
 	}
-
 }

@@ -22,48 +22,22 @@ public class str1 {
 
 		test = filter(arr, 'B');
 
-		for (String s : test)
-
-		{
-
+		for (String s : test) {
 			System.out.println(s);
-
 		}
 
 	}
 
-	public static ArrayList<String> filter(ArrayList<String> a, char c)
-
-	{
-
+	public static ArrayList<String> filter(ArrayList<String> a, char c) {
 		int i = 0;
-
-		while (i < a.size())
-
-		{
-
+		while (i < a.size()) {
 			String test1 = a.get(i);
-
-			if (test1.charAt(0) == c)
-
-			{
-
+			if (test1.charAt(0) == c) {
 				a.remove(i);
-
-			}
-
-			else
-
-			{
-
+			} else {
 				i++;
-
 			}
-
 		}
-
 		return a;
-
 	}
-
 }

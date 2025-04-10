@@ -8,7 +8,7 @@ class PalindromeExample2
       Scanner in = new Scanner(System.in);   
       System.out.println("Enter a string/number to check if it is a palindrome");  
       //original = in.nextLine();  
-      original = "11211"; 
+      original = "1121";
       int length = original.length();   
       for ( int i = length - 1; i >= 0; i-- )  
          reverse += original.charAt(i);  

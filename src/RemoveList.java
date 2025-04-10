@@ -1,28 +1,33 @@
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class RemoveList {
 
 	public static void main(String[] args) {
-		
-		ArrayList<String> arr = new ArrayList<String>();
-		arr.add("Brian");
 
-		arr.add("Bob");
+		Set set=new LinkedHashSet();
 
-		arr.add("David");
-
-		arr.add("Brandon");
-		arr.add("Eli");
+		List<String> list = new ArrayList<String>();
+		list.add("Brian");
+		list.add("Bob");
+		list.add("David");
+		list.add("Brandon");
+		list.add("Eli");
 		int i=0;
-		while( i<arr.size()) {
-			String test=arr.get(i);
+		list.removeIf(name->name.charAt(0)=='B');
+		list.forEach(System.out::println);
+		while( i<list.size()) {
+			String test=list.get(i);
 			if(test.charAt(0)=='B') {
-				arr.remove(i);
-			}else {i++;}
+				list.remove(i);
+			}else {
+				i++;
+			}
 		}
-		for(String s:arr)
-		System.out.println(s);
-
+		for(String s:list)
+			System.out.println(s);
 	}
 
 }

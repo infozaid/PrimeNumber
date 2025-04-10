@@ -7,18 +7,13 @@ public class FindMissingNumbers {
 		int diff = arr[0];
 
 		for (int i = 0; i < N; i++) {
-
-			// Check if diff and arr[i]-i
-			// both are equal or not
-			if (arr[i] - i != diff) {
-
 				// Loop for consecutive
 				// missing elements
 				while (diff < arr[i] - i) {
 					System.out.print((i + diff) + " ");
+
 					diff++;
 				}
-			}
 		}
 	}
 

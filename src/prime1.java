@@ -6,7 +6,7 @@ public class prime1 {
 		int p=0;
 		
 		for(int i=1;i<=50;i++) {
-			for(int j=2;j<i;j++) {
+			for(int j=2;j<i;j++) { //because prime number starts from 2
 				if(i%j!=0) {
 					p=1;
 				}else {

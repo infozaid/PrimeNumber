@@ -17,6 +17,10 @@ public class list1 {
 			roll_no++;
 		  System.out.println(string+" Roll NO: "+roll_no);
 		}
+
+		list.stream().forEach(string->{
+
+		});
 		
 
 	}

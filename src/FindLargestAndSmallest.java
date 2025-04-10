@@ -3,12 +3,10 @@ import java.util.Arrays;
 public class FindLargestAndSmallest {
 
 	public static void main(String[] args) {
-		
-		
+
 		int arr[]= {5,3,7,8,9,2,1,4,6};
 		int total=arr.length;
-		
-		
+
 		for (int i=0;i<total;i++) {
 			for(int j=i+1;j<total;j++) {
 				if(arr[i]>arr[j]) {
@@ -24,13 +22,9 @@ public class FindLargestAndSmallest {
 		
 		System.out.println("Here is 2nd method to sort array");
 		Arrays.sort(arr);
-		
-		
-		
-		int find1=arr[total-1];
-		
-		System.out.println("Largest number "+find1);
 
+		int find1=arr[total-1];
+		System.out.println("Largest number "+find1);
 	}
 
 }

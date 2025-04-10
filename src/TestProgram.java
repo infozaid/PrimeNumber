@@ -1,35 +1,37 @@
+import java.util.Arrays;
 
 public class TestProgram {
-	
+
 	static void printMissingElements() {
-		
-		
-		
+
+
 	}
 
 	public static void main(String[] args) {
+		int arr[] = {10,1,0,10,2,0,2,0,1,6,4,5,78,9};
+		int n = arr.length;
+		Arrays.sort(arr);
+		n = removeDuplicateElement(arr,n);
 
-		int arr[] = { 6, 7, 10, 11, 13 };
+		for(int i = 0; i<n; i++){
+			System.out.println(arr[i]);
+		}
+	}
 
-		int N = arr.length;
-		int diff = arr[0];
-		
+	public static int removeDuplicateElement(int arr[], int n){
+		if(n <= 1){
+			return n;
+		}
+		int uniqueIndex = 0;
 
-		for (int i = 0; i < arr.length; i++) {
-
-			// Check if diff and arr[i]-i
-			// both are equal or not
-			if (arr[i] - i != diff) {
-
-				// Loop for consecutive
-				// missing elements
-				while (diff < arr[i] - i) {
-					System.out.print((i + diff) + " ");
-					diff++;
-				}
+		for(int i = 0; i < n-1; i++){
+			if(arr[i]!=arr[i+1]){
+				arr[uniqueIndex++]=arr[i];
 			}
 		}
-		
+		arr[uniqueIndex++]=arr[n-1];
+
+		return uniqueIndex;
 	}
 
 }

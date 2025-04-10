@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public class FirstTwoLargestAndSmallestNumber {
-	
+
 	public static void main(String[] args) {
 		int[] arr= {5,4,3,6,7,8,9,2,1,0};
 		Arrays.sort(arr);
@@ -11,7 +11,7 @@ public class FirstTwoLargestAndSmallestNumber {
 		System.out.println();
 		System.out.println("here is second method to sort an array");
 		int tot=arr.length;
-		for(int j=0;j<arr.length;j++) {
+		for(int j=0; j<arr.length; j++) {
 			for(int k=j+1;k<arr.length;k++) {
 				if(arr[j]>arr[k]) {
 					int temp=arr[j];
@@ -20,12 +20,10 @@ public class FirstTwoLargestAndSmallestNumber {
 				}
 			}
 		}
-		
-		System.out.println("first largest: " +arr[tot-2]);
-	      
-		
-		
+
+		System.out.println("2nd largest: " +arr[tot-2]);
+
 	}
 
-	
+
 }

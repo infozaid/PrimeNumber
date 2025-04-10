@@ -29,7 +29,6 @@ public class DuplicatString {
 		StringBuilder sb = new StringBuilder();
 		for (Character character : charSet) {
 		    sb.append(character);
-		   
 		}
 		System.out.println(sb.toString());
 		
