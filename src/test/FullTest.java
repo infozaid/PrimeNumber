@@ -1,6 +1,7 @@
 package test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FullTest {
 
@@ -14,10 +15,11 @@ public class FullTest {
         System.out.println("The Average of total values: "+getAverage(numArray));
         System.out.println("Here is the sorted array: "+ Arrays.toString(sortArray(numArray)));
         System.out.println("Here is the max value of array: "+maxArrayValue(numArray));
-        System.out.println("Here is the removeElement array: "+Arrays.toString(removeElement(numArray,25)));
+        System.out.println("Here is the removeElement array: "+Arrays.toString(removeElement(numArray,100)));
         System.out.println("Here is the removeElement using list: "+removeElementUsingList(numArray,25));
         System.out.println("Here add Element  in existing array: "+Arrays.toString(addElement(numArray,60)));
         System.out.println("Here add Element using list in existing array: "+addElementUsingList(numArray,85));
+        System.out.println("Here removeElementUsingStream: "+removeElementUsingList(numArray,336));
     }
 
     public static int[] getIntArray(int number){
@@ -50,7 +52,6 @@ public class FullTest {
         }
         boolean flag = true;
         int temp;
-
         while (flag) {
             flag = false;
             for (int i = 0; i < array.length - 1; i++) {
@@ -77,27 +78,28 @@ public class FullTest {
 
     public static int[] removeElement(int[] array, int element){
         int [] newArray = new int[array.length-1];
-
-        for(int i=0;i<newArray.length;i++){
-            if(array[i]<element){ // here we check if arr<element it will just place the elements of array
-                newArray[i]=array[i]; // here it is placing each element
-            }else{
-                newArray[i]=array[i+1]; // here it is remove element if elements appear
+        boolean flag = false;
+        int j=0;
+        for(int i=0;i<array.length;i++){
+            if(!flag && array[i]==element){
+                flag=true;
+                continue;
+            }
+            if(j<newArray.length){
+                newArray[j++]=array[i];
             }
         }
         return newArray;
     }
 
-    public static int[] addElement(int[] array,int element){
-        int[] newArray = new int[array.length+1];
-        for(int i=0;i<newArray.length;i++){
-            if(newArray[array.length-1]==0){
-                newArray[i]=array[i];
+    public static int[] addElement(int[] array, int element) {
+        int[] newArray = new int[array.length + 1];
+        for (int i = 0; i < newArray.length; i++) {
+            if (newArray[array.length - 1] == 0) {
+                newArray[i] = array[i];
             }
         }
-        if(newArray[array.length]==0){
-            newArray[array.length]=element;
-        }
+        newArray[array.length] = element;
         return newArray;
     }
 
@@ -112,15 +114,6 @@ public class FullTest {
         return list;
     }
 
-    public static List<Integer> removeElementUsingListStream(int [] array, int element){
-        List<Integer> list = new ArrayList<>();
-        for(int value:array){
-            list.add(value);
-        }
-
-        list.remove(Integer.valueOf(element));
-        return list;
-    }
 
     public static List<Integer> addElementUsingList(int[] array,int element){
 
@@ -130,5 +123,12 @@ public class FullTest {
         }
         list.add(Integer.valueOf(element));
         return list;
+    }
+
+    public static List<Integer> removeElementUsingListStream(int[] array, int element) {
+        return Arrays
+                .stream(array)
+                .filter(e -> e != element)
+                .boxed().toList();
     }
 }
