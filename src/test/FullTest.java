@@ -16,6 +16,7 @@ public class FullTest {
         System.out.println("Here is the sorted array: "+ Arrays.toString(sortArray(numArray)));
         System.out.println("Here is the max value of array: "+maxArrayValue(numArray));
         System.out.println("Here is the removeElement array: "+Arrays.toString(removeElement(numArray,100)));
+        System.out.println("Here updateElement array: "+Arrays.toString(updateElement(numArray,700,4)));
         System.out.println("Here is the removeElement using list: "+removeElementUsingList(numArray,25));
         System.out.println("Here add Element  in existing array: "+Arrays.toString(addElement(numArray,60)));
         System.out.println("Here add Element using list in existing array: "+addElementUsingList(numArray,85));
@@ -87,6 +88,19 @@ public class FullTest {
             }
             if(j<newArray.length){
                 newArray[j++]=array[i];
+            }
+        }
+        return newArray;
+    }
+
+    public static int[] updateElement(int[] array,int element,int index){
+        int [] newArray = new int[array.length];
+
+        for(int i=0;i<array.length;i++){
+            if(array[i]==array[index]){
+                newArray[index]=element;
+            }else{
+                newArray[i]=array[i];
             }
         }
         return newArray;
