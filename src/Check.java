@@ -5,9 +5,19 @@ import java.util.List;
 public class Check {
 
     public static void main(String[] args) {
-        List<Integer> numList = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> numList = Arrays.asList(1, 2, 3, 4, 2, 3, 5, 8, 9);
 
         int sum = 0;
+
+        int sum2 = 0;
+
+        for(Integer num : numList) {
+            if(num<10){
+                sum2+=num;
+            }
+            System.out.println(num);
+        }
+        System.out.println(sum2);
 
         Iterator<Integer> iterator = numList.iterator();
 

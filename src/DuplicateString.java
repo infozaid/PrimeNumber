@@ -7,12 +7,10 @@ public class DuplicateString {
 		// If you already are assured that the strings in the array are sorted
 		// then the sort is not necessary. 
 		
-		for(int i = 0; i < array.length; i++){
-		    if((i+1)==array.length || !array[i].equals(array[(i+1)])){
-		        System.out.println(array[i]);
-		    } else {
-		        System.out.print(array[i]+" ");
-		    }
+		for(int i = 0; i < array.length-1; i++){
+		    if(!array[i].equals(array[i+1])){
+				System.out.println(array[i]);
+			}
 		}
 
 	}

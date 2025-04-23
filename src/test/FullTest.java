@@ -1,7 +1,7 @@
 package test;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class FullTest {
 
@@ -21,6 +21,8 @@ public class FullTest {
         System.out.println("Here add Element  in existing array: "+Arrays.toString(addElement(numArray,60)));
         System.out.println("Here add Element using list in existing array: "+addElementUsingList(numArray,85));
         System.out.println("Here removeElementUsingStream: "+removeElementUsingList(numArray,336));
+        System.out.println("Here we find square root : "+findSquareRoot(7));
+        System.out.println("Here is count of prime: "+countPrime());
     }
 
     public static int[] getIntArray(int number){
@@ -139,10 +141,41 @@ public class FullTest {
         return list;
     }
 
+
+
     public static List<Integer> removeElementUsingListStream(int[] array, int element) {
         return Arrays
                 .stream(array)
                 .filter(e -> e != element)
                 .boxed().toList();
+    }
+
+    public static double findSquareRoot(double x){
+        return Math.sqrt(x);
+    }
+
+    public static boolean isPrime(double number) {
+        if (number <= 1)
+            return false;
+
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int countPrime(){
+        int count = 0;
+
+        System.out.println("Prime Numbers less than 50: ");
+        for(int i=2;i<50;i++){
+            if (isPrime(i)){
+                System.out.print(i+" ");
+                count++;
+            }
+        }
+        return count;
     }
 }

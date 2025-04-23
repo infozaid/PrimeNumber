@@ -1,22 +1,26 @@
 
 public class Cal {
 
-	public static void main(String args[]){    
-		  int i,flag=0;
+	public static void main(String[] args) {
+		int i, j, flag = 0;
 
-		   for(i=2;i<=50;i++){
-			   if(i==0||i==1){
-				   System.out.println(i+ " is not prime number");
-				  }else if (i%2==0){      
-		           System.out.println(i+" is not prime number");
-		           flag=1;      
-		           break;      
-		    }
-		   }
-		   if(flag==0)  {
-			   System.out.println(i+" is prime number"); 
-			   }  
-		  }//end of else  
+		for(i=1;i<50;i++){
+			for(j=2;j<i;j++){
+				if(i%j!=0){
+					flag=1;
+				}else{
+					flag=0;
+					break;
+				}
+			}
+			if(flag==1){
+				System.out.println(i+" is prime number");
+			}
+
 		}
+
+
+	}
+}
 
 
