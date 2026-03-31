@@ -70,10 +70,10 @@ public class FullTest {
     }
 
     public static int maxArrayValue(int[] array){
-        int max = array[0];
-        for(int i=0;i<array.length;i++){
-            if(max<array[i]){
-                max = array[i];
+        int max = array[0];  // take and start with first element of array
+        for(int i=0;i<array.length;i++){ // take a loop
+            if(max<array[i]){ // check in a loop if element is less than
+                max = array[i]; // if element is less than then assign greater element which is find in a loop
             }
         }
         return max;
