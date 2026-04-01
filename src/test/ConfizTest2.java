@@ -35,8 +35,7 @@ public class ConfizTest2 {
 
     // below is well performed solution
     public static Character firstNonRepeating(String s){
-        byte[] flag = new byte[256];
-
+        int[] flag = new int[256];
         for(int i=0;i<s.length();i++){
             flag[s.charAt(i)]++;
         }
